@@ -1,4 +1,4 @@
-workspace "PongGame"
+workspace "PongRay"
     architecture "x64"
 
     configurations
@@ -46,7 +46,7 @@ project "raylib"
     
     filter{}
 
-project "PongGame"
+project "PongRay"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
