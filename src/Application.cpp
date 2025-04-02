@@ -1,12 +1,15 @@
 #include "Application.h"
+#include "Pad.h"
 #include "raylib.h"
 
 namespace PongRay
 {
 	Application::Application(const AppSettings& settings)
-		: _appSettings(settings)
+		: _appSettings(settings), _gameScene(*this)
 	{
-
+		auto playerPad = std::make_shared<Pad>();
+		playerPad->SetPosition({ 40,40 });
+		_gameScene.AddGameObject(playerPad);
 	}
 
 	Application::~Application()
@@ -29,9 +32,9 @@ namespace PongRay
 		CloseWindow();
 	}
 
-	void Application::OnUpdate(double deltaTime)
+	void Application::OnUpdate(float deltaTime)
 	{
-		// Do update
+		_gameScene.OnUpdate(deltaTime);
 	}
 
 	void Application::OnRender()
@@ -39,7 +42,7 @@ namespace PongRay
 		BeginDrawing();
 		ClearBackground(WHITE);
 
-
+		_gameScene.OnRender();
 
 		EndDrawing();
 	}

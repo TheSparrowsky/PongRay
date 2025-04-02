@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "GameScene.h"
 
 namespace PongRay
 {
@@ -19,10 +20,11 @@ namespace PongRay
 		~Application();
 
 		void Run();
-		void OnUpdate(double deltaTime);
+		void OnUpdate(float deltaTime);
 		void OnRender();
 
 	private:
 		AppSettings _appSettings;
+		GameScene _gameScene;
 	};
 }

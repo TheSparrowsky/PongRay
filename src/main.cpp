@@ -2,6 +2,6 @@
 
 int main()
 {
-	PongRay::Application application;
-	application.Run();
+	auto application = std::make_unique<PongRay::Application>(PongRay::Application());
+	application->Run();
 }
