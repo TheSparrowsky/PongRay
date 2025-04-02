@@ -1,14 +1,7 @@
-#include "raylib.h"
+#include "Application.h"
 
 int main()
 {
-	InitWindow(200, 200, "Test");
-
-	while (!WindowShouldClose()) 
-	{
-		BeginDrawing();
-
-		EndDrawing();
-	}
-	CloseWindow();
+	PongRay::Application application;
+	application.Run();
 }
